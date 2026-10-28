@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Référendum Bornalet – Penthaz</title>
+<meta name="description" content="Comité référendaire du Bornalet : un référendum pour permettre à la population de Penthaz de voter sur le crédit de CHF 8'846'000.– pour l'immeuble du Bornalet.">
+<meta property="og:title" content="Bornalet – Référendum communal">
+<meta property="og:description" content="Un investissement de 10 mio ? C'est aux habitants de choisir ! Ni pour, ni contre : signer, c'est demander une votation populaire.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="banniere-mobile.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=Source+Sans+3:wght@400;600;700&family=Caveat:wght@600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bleu:#123a73; --bleu-fonce:#0b2650; --bleu-clair:#e7eef8;
+  --or:#c9a227; --or-clair:#f6edcc;
+  --argent:#b9c0ca; --papier:#fbfaf6; --ligne:#d9e3f0; --marge:#e2a5a5;
+  --texte:#1d2633; --doux:#566173;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--papier);color:var(--texte);font:18px/1.6 "Source Sans 3",system-ui,sans-serif}
+a{color:var(--bleu)}
+.wrap{max-width:860px;margin:0 auto;padding:0 20px}
+
+/* En-tête */
+header.hero{background:var(--bleu-fonce);color:#fff;position:relative;overflow:hidden}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.banniere{display:block;width:100%;height:auto}
+.bandeau{background:linear-gradient(160deg,var(--bleu-fonce),var(--bleu))}
+.bandeau .wrap{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:14px;padding:18px 20px 60px}
+.bandeau .badge,.bandeau .cta{margin:0}
+header.hero::after{content:"";position:absolute;left:0;right:0;bottom:0;height:6px;background:linear-gradient(90deg,var(--argent),var(--or),var(--argent))}
+.kicker{letter-spacing:.18em;text-transform:uppercase;font-weight:700;font-size:.8rem;color:var(--or)}
+h1{font-family:Fraunces,Georgia,serif;font-weight:800;font-size:clamp(2.1rem,6vw,3.6rem);line-height:1.08;margin:.3em 0 .35em}
+.slogan{font-size:clamp(1.15rem,2.6vw,1.45rem);max-width:34em;opacity:.95;margin:0}
+.badge{display:inline-flex;gap:.6em;align-items:center;margin-top:28px;padding:.55em 1.1em;border:2px solid var(--or);border-radius:999px;font-weight:700;letter-spacing:.06em}
+.badge b{color:var(--or)}
+.cta{display:inline-block;margin-top:28px;margin-left:12px;background:var(--or);color:var(--bleu-fonce);text-decoration:none;font-weight:700;padding:.7em 1.3em;border-radius:10px}
+.cta:hover{filter:brightness(1.05)}
+
+/* Feuille lignée */
+.feuille{background:
+   linear-gradient(90deg,transparent 46px,var(--marge) 46px,var(--marge) 48px,transparent 48px),
+   repeating-linear-gradient(#fff 0 31px,var(--ligne) 31px 32px);
+  border-radius:6px;box-shadow:0 10px 30px rgba(18,58,115,.12);padding:30px 26px 30px 70px;margin:-36px 0 0;position:relative}
+.feuille h2{margin-top:0}
+.signer{margin-top:22px;display:flex;align-items:flex-end;gap:14px;flex-wrap:wrap}
+.signer .ligne-sig{flex:1;min-width:180px;border-bottom:2px solid var(--bleu);height:44px;position:relative}
+.signer .ligne-sig span{position:absolute;bottom:4px;left:8px;font-family:Caveat,cursive;font-size:1.7rem;color:var(--bleu)}
+.signer small{color:var(--doux)}
+
+section{padding:48px 0 8px}
+h2{font-family:Fraunces,Georgia,serif;font-weight:600;color:var(--bleu-fonce);font-size:clamp(1.5rem,3.4vw,2rem);line-height:1.2;margin:0 0 .6em}
+h2 .ico{margin-right:.35em}
+.encadre{background:var(--bleu-clair);border-left:5px solid var(--bleu);padding:18px 22px;border-radius:0 10px 10px 0;margin:18px 0}
+.encadre strong{color:var(--bleu-fonce)}
+
+/* Chronologie */
+.chrono{list-style:none;margin:24px 0 0;padding:0;position:relative}
+.chrono::before{content:"";position:absolute;left:11px;top:6px;bottom:6px;width:3px;background:linear-gradient(var(--argent),var(--or))}
+.chrono li{position:relative;padding:0 0 26px 44px}
+.chrono li::before{content:"";position:absolute;left:3px;top:6px;width:19px;height:19px;border-radius:50%;background:#fff;border:4px solid var(--bleu)}
+.chrono li.last::before{border-color:var(--or);background:var(--or-clair)}
+.date{font-weight:700;color:var(--bleu);letter-spacing:.02em}
+.chrono h3{margin:.1em 0 .3em;font-size:1.15rem}
+.montant{display:inline-block;background:var(--or-clair);border:1px solid #e6d48f;color:#6b5410;font-weight:700;padding:.05em .5em;border-radius:6px;white-space:nowrap}
+.chrono p{margin:.3em 0}
+
+.total{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-top:10px}
+.carte{background:#fff;border:1px solid var(--ligne);border-top:5px solid var(--or);border-radius:10px;padding:20px}
+.carte .gros{font-family:Fraunces,Georgia,serif;font-weight:800;font-size:2rem;color:var(--bleu-fonce);line-height:1.1}
+.carte p{margin:.4em 0 0;color:var(--doux);font-size:.97rem}
+
+/* Signer */
+#signer .bloc{background:linear-gradient(160deg,var(--bleu-fonce),var(--bleu));color:#fff;border-radius:14px;padding:30px 26px;margin-top:8px}
+#signer h2{color:#fff}
+#signer .btn{display:inline-block;background:var(--or);color:var(--bleu-fonce);text-decoration:none;font-weight:700;padding:.8em 1.4em;border-radius:10px;margin-top:8px}
+#signer .a-completer{display:inline-block;background:rgba(255,255,255,.12);border:1px dashed rgba(255,255,255,.6);padding:.5em .9em;border-radius:8px;margin-top:10px;font-size:.95rem}
+#signer ul{padding-left:1.2em}
+
+footer{margin-top:56px;padding:28px 0 40px;border-top:4px solid var(--or);background:#fff;color:var(--doux);font-size:.95rem}
+footer strong{color:var(--bleu-fonce)}
+
+@media (max-width:560px){
+  body{font-size:17px}
+  .feuille{padding:24px 18px 24px 52px;background:
+   linear-gradient(90deg,transparent 32px,var(--marge) 32px,var(--marge) 34px,transparent 34px),
+   repeating-linear-gradient(#fff 0 31px,var(--ligne) 31px 32px)}
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <h1 class="sr-only">Un investissement de 10 mio ? C'est aux habitants de choisir ! Référendum sur le Bornalet</h1>
+  <picture>
+    <source media="(max-width:700px)" srcset="banniere-mobile.jpg">
+    <img class="banniere" src="banniere.jpg" width="2172" height="724" alt="Une balance : d'un côté le village de Penthaz et ses pièces d'or, de l'autre le nouvel immeuble du Bornalet, devant une foule d'habitants. « Un investissement de 10 mio ? C'est aux habitants de choisir ! » – Référendum sur le Bornalet">
+  </picture>
+  <div class="bandeau">
+    <div class="wrap">
+      <div class="badge">⚖️ <span><b>NI POUR</b> • <b>NI CONTRE</b></span></div>
+      <a class="cta" href="#signer">✍️ Comment signer</a>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <div class="feuille">
+    <h2>Signer, ce n'est pas voter pour ou contre le projet&nbsp;!</h2>
+    <p>Notre comité ne prend position <strong>ni POUR ni CONTRE</strong> la construction du bâtiment.</p>
+    <p>Signer la demande de référendum, c'est demander l'organisation d'une <strong>votation populaire</strong>, lors de laquelle chacun pourra librement voter <strong>OUI</strong> ou <strong>NON</strong>.</p>
+    <div class="signer">
+      <div class="ligne-sig"><span>Votre signature</span></div>
+      <small>… pour que Penthaz puisse voter.</small>
+    </div>
+  </div>
+
+  <section id="pourquoi">
+    <h2><span class="ico">🗳️</span>Pourquoi un référendum&nbsp;?</h2>
+    <p>Le Comité référendaire du Bornalet s'est constitué avec un objectif : permettre à la population de Penthaz de se prononcer sur cet investissement important pour notre village.</p>
+    <div class="encadre">Nous considérons qu'une décision de cette importance mérite d'être soumise à l'ensemble du corps électoral communal, car elle pourrait <strong>endetter fortement la commune</strong> et limiter à l'avenir les autres projets en cours.</div>
+  </section>
+
+  <section id="projet">
+    <h2><span class="ico">🏘️</span>Le projet du Bornalet : retour sur 5&nbsp;années de décisions</h2>
+    <ol class="chrono">
+      <li>
+        <div class="date">2021</div>
+        <h3>Acquisition du terrain</h3>
+        <p>Le Conseil communal accepte un crédit de <span class="montant">CHF 750'000.–</span> pour l'acquisition des parcelles n° 39 et 55, afin de permettre le développement du site du Bornalet.</p>
+        <p>À cette époque, les intentions comprennent notamment des logements protégés ou subventionnés, une garderie et des espaces communaux.</p>
+      </li>
+      <li>
+        <div class="date">2023</div>
+        <h3>Premières études</h3>
+        <p>Un crédit de <span class="montant">CHF 450'000.–</span> est accordé pour étudier la transformation du site, élaborer les plans et préparer le projet de construction.</p>
+      </li>
+      <li>
+        <div class="date">2025</div>
+        <h3>Études complémentaires</h3>
+        <p>Un nouveau crédit de <span class="montant">CHF 105'000.–</span> est accepté, notamment pour modifier l'accès au parking souterrain et étudier les aménagements extérieurs.</p>
+        <p>Entre-temps, le projet a évolué : les locaux initialement envisagés pour la garderie et les activités communales ont laissé place à une surface commerciale.</p>
+      </li>
+      <li class="last">
+        <div class="date">6 octobre 2026</div>
+        <h3>Le crédit de construction</h3>
+        <p>Le Conseil communal accepte le préavis amendé n° 05-2026, accordant un crédit de <span class="montant">CHF 8'846'000.–</span> pour la réalisation d'un immeuble comprenant 14 logements, une surface commerciale et 20 places de stationnement souterraines.</p>
+      </li>
+    </ol>
+  </section>
+
+  <section id="chiffres">
+    <h2><span class="ico">💰</span>En résumé</h2>
+    <div class="total">
+      <div class="carte">
+        <div class="gros">+ de 10 mio</div>
+        <p>de crédits accordés pour ce projet depuis 2021, en comptant l'achat du terrain et le crédit de construction récemment accepté.</p>
+      </div>
+      <div class="carte">
+        <div class="gros">0,9 % / an</div>
+        <p>Le rendement calculé ne tient compte ni des éventuels dépassements de budget, ni de l'évolution des taux d'intérêt.</p>
+      </div>
+    </div>
+    <div class="encadre">💬 Il existe d'autres solutions. En signant le référendum, vous permettez l'organisation d'un <strong>vrai débat</strong>.</div>
+  </section>
+
+  <section id="signer">
+    <div class="bloc">
+      <h2>✍️ Comment signer&nbsp;?</h2>
+      <p>La feuille officielle de signatures, les conditions de participation et les modalités de retour sont disponibles ici :</p>
+      <!-- À COMPLÉTER : remplacer href="#" par le lien vers la feuille officielle (PDF) -->
+      <a class="btn" href="#">📄 Télécharger la feuille officielle</a>
+      <div class="a-completer">À compléter : délai de récolte, adresse de retour et lieux où signer.</div>
+      <p>Une question ? Écrivez-nous à <a style="color:var(--or)" href="mailto:referendumpenthaz@gmail.com">referendumpenthaz@gmail.com</a></p>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <strong>Comité référendaire du Bornalet – Penthaz</strong><br>
+    Contact : <a href="mailto:referendumpenthaz@gmail.com">referendumpenthaz@gmail.com</a> · Facebook : Referendum Bornalet · Instagram : @referendum.bornalet
+  </div>
+</footer>
+
+</body>
+</html>
