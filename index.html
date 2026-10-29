@@ -108,6 +108,18 @@ textarea{min-height:120px;resize:vertical}
 .merci.visible{display:block}
 @media (max-width:560px){.champs{grid-template-columns:1fr}}
 
+/* Lecteur PDF */
+.lecteur{position:fixed;inset:0;z-index:100;background:rgba(11,38,80,.88);display:none;flex-direction:column}
+.lecteur.ouvert{display:flex}
+.lecteur-barre{display:flex;align-items:center;gap:10px;flex-wrap:wrap;padding:10px 16px;background:var(--bleu-fonce);color:#fff;border-bottom:4px solid var(--or)}
+.lecteur-barre strong{flex:1;min-width:140px;font-size:1rem}
+.lecteur-barre a,.lecteur-barre button{font:inherit;font-size:.95rem;font-weight:700;border-radius:8px;padding:.5em 1em;cursor:pointer;text-decoration:none}
+.l-telecharger{background:var(--or);color:var(--bleu-fonce);border:0}
+.l-fermer{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.6)}
+.lecteur-page{flex:1;overflow:auto;padding:16px;display:flex;justify-content:center;align-items:flex-start}
+.lecteur-page canvas{background:#fff;max-width:100%;height:auto;box-shadow:0 8px 30px rgba(0,0,0,.4)}
+.lecteur-msg{color:#fff;margin-top:40px}
+
 footer{margin-top:56px;padding:28px 0 40px;border-top:4px solid var(--or);background:#fff;color:var(--doux);font-size:.95rem}
 footer strong{color:var(--bleu-fonce)}
 
@@ -205,7 +217,7 @@ footer strong{color:var(--bleu-fonce)}
         <li>
           <h3>Téléchargez et imprimez la feuille officielle</h3>
           <p>Seule la liste officielle, scellée par la Municipalité, est valable. Imprimez-la en A4, sans la modifier.</p>
-          <a class="btn" href="liste-signatures.pdf" target="_blank" rel="noopener" download>📄 Télécharger la feuille officielle (PDF)</a>
+          <a class="btn" id="voir-pdf" href="liste-signatures.pdf" target="_blank" rel="noopener">📄 Voir la feuille officielle</a>
         </li>
         <li>
           <h3>Remplissez et signez à la main</h3>
@@ -281,10 +293,70 @@ footer strong{color:var(--bleu-fonce)}
   </div>
 </footer>
 
+<div class="lecteur" id="lecteur" role="dialog" aria-modal="true" aria-label="Feuille officielle de signatures">
+  <div class="lecteur-barre">
+    <strong>Feuille officielle de signatures</strong>
+    <a class="l-telecharger" href="liste-signatures.pdf" download="Referendum-Bornalet-liste-signatures.pdf">⬇️ Télécharger</a>
+    <button class="l-fermer" type="button" id="lecteur-fermer">✕ Fermer</button>
+  </div>
+  <div class="lecteur-page" id="lecteur-page"><p class="lecteur-msg">Chargement…</p></div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
 <script>
 if (/[?&]merci=1/.test(location.search)) {
   document.getElementById('merci').classList.add('visible');
 }
+
+(function () {
+  var lien = document.getElementById('voir-pdf');
+  var lecteur = document.getElementById('lecteur');
+  var zone = document.getElementById('lecteur-page');
+  var fermer = document.getElementById('lecteur-fermer');
+  var dejaRendu = false;
+  if (!window.pdfjsLib) return; // sans le lecteur, le lien ouvre le PDF dans le navigateur
+  pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+
+  function rendre() {
+    pdfjsLib.getDocument('liste-signatures.pdf').promise.then(function (pdf) {
+      zone.innerHTML = '';
+      var suite = Promise.resolve();
+      for (var n = 1; n <= pdf.numPages; n++) {
+        (function (num) {
+          suite = suite.then(function () {
+            return pdf.getPage(num).then(function (page) {
+              var largeur = Math.min(zone.clientWidth - 32, 900);
+              var base = page.getViewport({ scale: 1 });
+              var ratio = window.devicePixelRatio || 1;
+              var vp = page.getViewport({ scale: (largeur / base.width) * ratio });
+              var c = document.createElement('canvas');
+              c.width = vp.width; c.height = vp.height;
+              c.style.width = (vp.width / ratio) + 'px';
+              zone.appendChild(c);
+              return page.render({ canvasContext: c.getContext('2d'), viewport: vp }).promise;
+            });
+          });
+        })(n);
+      }
+      dejaRendu = true;
+    }).catch(function () {
+      zone.innerHTML = '<p class="lecteur-msg">Impossible d\'afficher la feuille ici. Utilisez le bouton « Télécharger ».</p>';
+    });
+  }
+
+  lien.addEventListener('click', function (e) {
+    e.preventDefault();
+    lecteur.classList.add('ouvert');
+    document.body.style.overflow = 'hidden';
+    if (!dejaRendu) rendre();
+  });
+  function fermerLecteur() {
+    lecteur.classList.remove('ouvert');
+    document.body.style.overflow = '';
+  }
+  fermer.addEventListener('click', fermerLecteur);
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') fermerLecteur(); });
+})();
 </script>
 </body>
 </html>
