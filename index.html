@@ -259,7 +259,7 @@ footer strong{color:var(--bleu-fonce)}
       <div class="merci" id="erreur" role="alert" style="background:#fdecea;border-color:#b3261e">⚠️ L'envoi n'a pas fonctionné. Réessayez dans un instant, ou écrivez-nous à <a href="mailto:referendumpenthaz@gmail.com">referendumpenthaz@gmail.com</a>.</div>
       <form id="formulaire" action="https://api.web3forms.com/submit" method="POST">
         <!-- Clé Web3Forms liée à referendumpenthaz@gmail.com -->
-        <input type="hidden" name="access_key" value="CLE_WEB3FORMS">
+        <input type="hidden" name="access_key" value="6ef3c58a-3d96-4efa-ae7a-a9e2f7e2e658">
         <input type="hidden" name="subject" value="Site référendum Bornalet – nouvelle demande">
         <input type="hidden" name="from_name" value="Site référendum Bornalet">
         <input type="hidden" name="redirect" value="https://referendum.ddns.net/?merci=1#contact">
@@ -269,7 +269,7 @@ footer strong{color:var(--bleu-fonce)}
           <div><label for="nom">Nom *</label><input id="nom" name="Nom" required autocomplete="family-name"></div>
           <div class="plein"><label for="adresse">Adresse (rue et n°) *</label><input id="adresse" name="Adresse" required autocomplete="street-address"></div>
           <div><label for="npa">NPA et localité *</label><input id="npa" name="NPA et localité" required value="1303 Penthaz"></div>
-          <div><label for="tel">Téléphone *</label><input id="tel" name="Téléphone" type="tel" required autocomplete="tel" placeholder="079 123 45 67"></div>
+          <div><label for="tel">Téléphone <span style="font-weight:400;color:var(--doux)">(facultatif)</span></label><input id="tel" name="Téléphone" type="tel" autocomplete="tel" placeholder="079 123 45 67"></div>
           <div class="plein"><label for="email">E-mail <span style="font-weight:400;color:var(--doux)">(facultatif)</span></label><input id="email" name="email" type="email" autocomplete="email" placeholder="prenom.nom@exemple.ch"></div>
           <div class="plein">
             <label for="demande">Je souhaite *</label>
