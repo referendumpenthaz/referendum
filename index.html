@@ -80,6 +80,33 @@ h2 .ico{margin-right:.35em}
 #signer .btn{display:inline-block;background:var(--or);color:var(--bleu-fonce);text-decoration:none;font-weight:700;padding:.8em 1.4em;border-radius:10px;margin-top:8px}
 #signer .a-completer{display:inline-block;background:rgba(255,255,255,.12);border:1px dashed rgba(255,255,255,.6);padding:.5em .9em;border-radius:8px;margin-top:10px;font-size:.95rem}
 #signer ul{padding-left:1.2em}
+#signer .delai{display:inline-block;background:var(--or);color:var(--bleu-fonce);font-weight:700;padding:.35em .8em;border-radius:8px;margin:4px 0 10px}
+.etapes{counter-reset:e;list-style:none;padding:0;margin:20px 0}
+.etapes li{counter-increment:e;position:relative;padding:0 0 18px 52px}
+.etapes li::before{content:counter(e);position:absolute;left:0;top:0;width:36px;height:36px;border-radius:50%;background:var(--or);color:var(--bleu-fonce);font-weight:800;display:flex;align-items:center;justify-content:center;font-family:Fraunces,Georgia,serif}
+.etapes h3{margin:.1em 0 .25em;font-size:1.1rem;color:#fff}
+.etapes p{margin:.2em 0}
+.retours{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px;margin:12px 0 4px}
+.retour{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.3);border-radius:10px;padding:16px}
+.retour b{display:block;color:var(--or);margin-bottom:4px}
+.retour p{margin:.2em 0;font-size:.97rem}
+.a-conf{display:inline-block;margin-top:6px;font-size:.85rem;border:1px dashed rgba(255,255,255,.6);border-radius:6px;padding:.15em .5em}
+.conditions{font-size:.95rem;opacity:.95}
+
+/* Formulaire */
+#contact .boite{background:#fff;border:1px solid var(--ligne);border-top:5px solid var(--or);border-radius:12px;padding:26px 22px}
+.champs{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.champs .plein{grid-column:1/-1}
+label{display:block;font-weight:600;color:var(--bleu-fonce);font-size:.95rem;margin-bottom:4px}
+input,select,textarea{width:100%;font:inherit;font-size:1rem;padding:.6em .7em;border:1px solid #b8c4d6;border-radius:8px;background:#fff;color:var(--texte)}
+input:focus,select:focus,textarea:focus{outline:3px solid var(--or-clair);border-color:var(--bleu)}
+textarea{min-height:120px;resize:vertical}
+.envoyer{margin-top:18px;background:var(--bleu);color:#fff;border:0;font:inherit;font-weight:700;padding:.8em 1.5em;border-radius:10px;cursor:pointer}
+.envoyer:hover{background:var(--bleu-fonce)}
+.note{color:var(--doux);font-size:.88rem;margin-top:12px}
+.merci{display:none;background:#e6f4ea;border-left:5px solid #2e7d4f;padding:14px 18px;border-radius:0 10px 10px 0;margin-bottom:16px}
+.merci.visible{display:block}
+@media (max-width:560px){.champs{grid-template-columns:1fr}}
 
 footer{margin-top:56px;padding:28px 0 40px;border-top:4px solid var(--or);background:#fff;color:var(--doux);font-size:.95rem}
 footer strong{color:var(--bleu-fonce)}
@@ -172,11 +199,76 @@ footer strong{color:var(--bleu-fonce)}
   <section id="signer">
     <div class="bloc">
       <h2>✍️ Comment signer&nbsp;?</h2>
-      <p>La feuille officielle de signatures, les conditions de participation et les modalités de retour sont disponibles ici :</p>
-      <!-- À COMPLÉTER : remplacer href="#" par le lien vers la feuille officielle (PDF) -->
-      <a class="btn" href="#">📄 Télécharger la feuille officielle</a>
-      <div class="a-completer">À compléter : délai de récolte, adresse de retour et lieux où signer.</div>
-      <p>Une question ? Écrivez-nous à <a style="color:var(--or)" href="mailto:referendumpenthaz@gmail.com">referendumpenthaz@gmail.com</a></p>
+      <div class="delai">📅 Récolte des signatures : du 20 octobre au 20 novembre 2026</div>
+
+      <ol class="etapes">
+        <li>
+          <h3>Téléchargez et imprimez la feuille officielle</h3>
+          <p>Seule la liste officielle, scellée par la Municipalité, est valable. Imprimez-la en A4, sans la modifier.</p>
+          <a class="btn" href="liste-signatures.pdf" target="_blank" rel="noopener" download>📄 Télécharger la feuille officielle (PDF)</a>
+        </li>
+        <li>
+          <h3>Remplissez et signez à la main</h3>
+          <p>Chaque personne écrit lisiblement, à la main, son nom, son prénom, sa date de naissance et son adresse, puis signe elle-même. Laissez la colonne « Contrôle » vide. Toutes les personnes du ménage qui ont le droit de vote à Penthaz peuvent signer sur la même feuille.</p>
+          <p class="conditions">Peuvent signer : les personnes inscrites au registre électoral de Penthaz, c'est-à-dire les Suisses dès 18 ans domiciliés à Penthaz, et les personnes étrangères dès 18 ans domiciliées à Penthaz, qui habitent en Suisse depuis plus de 10 ans et dans le canton de Vaud depuis plus de 3 ans. On ne signe qu'une seule fois.</p>
+        </li>
+        <li>
+          <h3>Rendez-nous la feuille, même incomplète</h3>
+          <p>Choisissez la solution qui vous convient :</p>
+          <div class="retours">
+            <div class="retour">
+              <b>✉️ Par la poste ou dans la boîte aux lettres</b>
+              <p>Envoyez la feuille dans une enveloppe affranchie, ou déposez-la directement dans la boîte aux lettres de l'un de ces membres du comité :</p>
+              <p><strong>Comité référendaire du Bornalet<br>c/o Patrick Narducci<br>Ch. du Montillier 22<br>1303 Penthaz</strong></p>
+              <p><strong>Comité référendaire du Bornalet<br>c/o Christian Muster<br>Rue du Four 2<br>1303 Penthaz</strong></p>
+            </div>
+            <div class="retour">
+              <b>🏪 Chez un commerçant</b>
+              <p>Déposez la feuille dans la boîte du comité chez notre commerçant partenaire à Penthaz.</p>
+              <span class="a-conf">Lieu à confirmer</span>
+            </div>
+            <div class="retour">
+              <b>🚪 Retrait à domicile</b>
+              <p>Un membre du comité passe chercher votre feuille. Remplissez simplement le <a style="color:var(--or)" href="#contact">formulaire ci-dessous</a>.</p>
+            </div>
+          </div>
+          <p><strong>Au plus tard le 20 novembre 2026</strong>, mais le plus tôt possible : nous devons encore remettre toutes les feuilles à la Municipalité.</p>
+        </li>
+      </ol>
+
+      <p>Une question ? Écrivez-nous à <a style="color:var(--or)" href="mailto:referendumpenthaz@gmail.com">referendumpenthaz@gmail.com</a> ou utilisez le formulaire ci-dessous.</p>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2><span class="ico">📬</span>Retrait à domicile, feuille ou question</h2>
+    <div class="boite">
+      <div class="merci" id="merci" role="status">✅ Merci ! Votre message a bien été envoyé. Un membre du comité vous contactera.</div>
+      <form action="https://formsubmit.co/referendumpenthaz@gmail.com" method="POST">
+        <input type="hidden" name="_subject" value="Site référendum Bornalet – nouvelle demande">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_next" value="https://referendum.ddns.net/?merci=1#contact">
+        <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+        <div class="champs">
+          <div><label for="prenom">Prénom *</label><input id="prenom" name="Prénom" required autocomplete="given-name"></div>
+          <div><label for="nom">Nom *</label><input id="nom" name="Nom" required autocomplete="family-name"></div>
+          <div class="plein"><label for="adresse">Adresse (rue et n°) *</label><input id="adresse" name="Adresse" required autocomplete="street-address"></div>
+          <div><label for="npa">NPA et localité *</label><input id="npa" name="NPA et localité" required value="1303 Penthaz"></div>
+          <div><label for="tel">Téléphone *</label><input id="tel" name="Téléphone" type="tel" required autocomplete="tel" placeholder="079 123 45 67"></div>
+          <div class="plein">
+            <label for="demande">Je souhaite *</label>
+            <select id="demande" name="Demande" required>
+              <option value="">— Choisir —</option>
+              <option>Qu'un membre du comité passe récupérer ma feuille signée</option>
+              <option>Recevoir une feuille de signatures à domicile</option>
+              <option>Poser une question</option>
+            </select>
+          </div>
+          <div class="plein"><label for="message">Message</label><textarea id="message" name="Message" placeholder="Par exemple : vos disponibilités pour le passage, le nombre de signataires dans le ménage, votre question…"></textarea></div>
+        </div>
+        <button class="envoyer" type="submit">Envoyer</button>
+        <p class="note">Vos données sont transmises uniquement au comité référendaire, par e-mail, et ne servent qu'à organiser la récolte des signatures. Attention : ce formulaire ne remplace pas la signature sur la feuille officielle.</p>
+      </form>
     </div>
   </section>
 
@@ -189,5 +281,10 @@ footer strong{color:var(--bleu-fonce)}
   </div>
 </footer>
 
+<script>
+if (/[?&]merci=1/.test(location.search)) {
+  document.getElementById('merci').classList.add('visible');
+}
+</script>
 </body>
 </html>
