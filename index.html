@@ -256,17 +256,21 @@ footer strong{color:var(--bleu-fonce)}
     <h2><span class="ico">📬</span>Retrait à domicile, feuille ou question</h2>
     <div class="boite">
       <div class="merci" id="merci" role="status">✅ Merci ! Votre message a bien été envoyé. Un membre du comité vous contactera.</div>
-      <form action="https://formsubmit.co/referendumpenthaz@gmail.com" method="POST">
-        <input type="hidden" name="_subject" value="Site référendum Bornalet – nouvelle demande">
-        <input type="hidden" name="_template" value="table">
-        <input type="hidden" name="_next" value="https://referendum.ddns.net/?merci=1#contact">
-        <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+      <div class="merci" id="erreur" role="alert" style="background:#fdecea;border-color:#b3261e">⚠️ L'envoi n'a pas fonctionné. Réessayez dans un instant, ou écrivez-nous à <a href="mailto:referendumpenthaz@gmail.com">referendumpenthaz@gmail.com</a>.</div>
+      <form id="formulaire" action="https://api.web3forms.com/submit" method="POST">
+        <!-- Clé Web3Forms liée à referendumpenthaz@gmail.com -->
+        <input type="hidden" name="access_key" value="CLE_WEB3FORMS">
+        <input type="hidden" name="subject" value="Site référendum Bornalet – nouvelle demande">
+        <input type="hidden" name="from_name" value="Site référendum Bornalet">
+        <input type="hidden" name="redirect" value="https://referendum.ddns.net/?merci=1#contact">
+        <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
         <div class="champs">
           <div><label for="prenom">Prénom *</label><input id="prenom" name="Prénom" required autocomplete="given-name"></div>
           <div><label for="nom">Nom *</label><input id="nom" name="Nom" required autocomplete="family-name"></div>
           <div class="plein"><label for="adresse">Adresse (rue et n°) *</label><input id="adresse" name="Adresse" required autocomplete="street-address"></div>
           <div><label for="npa">NPA et localité *</label><input id="npa" name="NPA et localité" required value="1303 Penthaz"></div>
           <div><label for="tel">Téléphone *</label><input id="tel" name="Téléphone" type="tel" required autocomplete="tel" placeholder="079 123 45 67"></div>
+          <div class="plein"><label for="email">E-mail <span style="font-weight:400;color:var(--doux)">(facultatif)</span></label><input id="email" name="email" type="email" autocomplete="email" placeholder="prenom.nom@exemple.ch"></div>
           <div class="plein">
             <label for="demande">Je souhaite *</label>
             <select id="demande" name="Demande" required>
@@ -307,6 +311,36 @@ footer strong{color:var(--bleu-fonce)}
 if (/[?&]merci=1/.test(location.search)) {
   document.getElementById('merci').classList.add('visible');
 }
+
+// Envoi du formulaire sans quitter la page
+(function () {
+  var f = document.getElementById('formulaire');
+  var ok = document.getElementById('merci');
+  var ko = document.getElementById('erreur');
+  if (!f || !window.fetch) return;
+  f.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var btn = f.querySelector('.envoyer');
+    var data = new FormData(f);
+    var mail = (data.get('email') || '').trim();
+    if (mail) data.set('replyto', mail); // répondre directement à l'habitant
+    else data.delete('email');
+    data.delete('redirect');
+    btn.disabled = true; btn.textContent = 'Envoi…';
+    ok.classList.remove('visible'); ko.classList.remove('visible');
+    fetch(f.action, { method: 'POST', body: data, headers: { 'Accept': 'application/json' } })
+      .then(function (r) { return r.json(); })
+      .then(function (res) {
+        if (res && res.success) { ok.classList.add('visible'); f.reset(); document.getElementById('npa').value = '1303 Penthaz'; }
+        else { ko.classList.add('visible'); }
+      })
+      .catch(function () { ko.classList.add('visible'); })
+      .then(function () {
+        btn.disabled = false; btn.textContent = 'Envoyer';
+        document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+      });
+  });
+})();
 
 (function () {
   var lien = document.getElementById('voir-pdf');
