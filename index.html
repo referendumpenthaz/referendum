@@ -30,15 +30,10 @@ a{color:var(--bleu)}
 header.hero{background:var(--bleu-fonce);color:#fff;position:relative;overflow:hidden}
 .sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 .banniere{display:block;width:100%;height:auto}
-.bandeau{background:linear-gradient(160deg,var(--bleu-fonce),var(--bleu))}
-.bandeau .wrap{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:14px;padding:18px 20px 60px}
-.bandeau .cta{margin:0}
 header.hero::after{content:"";position:absolute;left:0;right:0;bottom:0;height:6px;background:linear-gradient(90deg,var(--argent),var(--or),var(--argent))}
 .kicker{letter-spacing:.18em;text-transform:uppercase;font-weight:700;font-size:.8rem;color:var(--or)}
 h1{font-family:Fraunces,Georgia,serif;font-weight:800;font-size:clamp(2.1rem,6vw,3.6rem);line-height:1.08;margin:.3em 0 .35em}
 .slogan{font-size:clamp(1.15rem,2.6vw,1.45rem);max-width:34em;opacity:.95;margin:0}
-.cta{display:inline-block;margin-top:28px;margin-left:12px;background:var(--or);color:var(--bleu-fonce);text-decoration:none;font-weight:700;padding:.7em 1.3em;border-radius:10px}
-.cta:hover{filter:brightness(1.05)}
 
 
 section{padding:48px 0 8px}
@@ -110,6 +105,7 @@ footer .liens a{white-space:nowrap}
 .actu .quand{font-size:.85rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--or)}
 .actu h3{font-family:Fraunces,Georgia,serif;font-weight:600;color:var(--bleu-fonce);font-size:1.3rem;margin:.2em 0 .5em}
 .actu p{margin:.5em 0}
+.article-img.photo-actu{display:block;margin:14px auto 6px;max-width:420px}
 .article-img{display:block;margin:12px 0 6px}
 .article-img img{display:block;width:100%;height:auto;border:1px solid var(--ligne);border-radius:6px}
 .article-img small{color:var(--doux)}
@@ -131,17 +127,33 @@ footer strong{color:var(--bleu-fonce)}
     <source media="(max-width:700px)" srcset="banniere-mobile.jpg">
     <img class="banniere" src="banniere.jpg" width="2172" height="724" alt="Une balance : d'un côté le village de Penthaz et ses pièces d'or, de l'autre le nouvel immeuble du Bornalet, devant une foule d'habitants. « Un investissement de 10 mio ? C'est aux habitants de choisir ! » – Référendum sur le Bornalet">
   </picture>
-  <div class="bandeau">
-    <div class="wrap">
-      <a class="cta" href="#actualites">📰 Actualités</a>
-    </div>
-  </div>
 </header>
 
 <main class="wrap">
 
   <section id="actualites">
     <h2><span class="ico">📰</span>Actualités</h2>
+
+    <article class="actu">
+      <div class="quand">18 novembre 2026 · Message du comité</div>
+      <h3>Les signatures ont été remises à la commune&nbsp;!</h3>
+      <p>✅ C'est fait : toutes vos signatures ont été remises ce matin à la commune. Le nombre requis a été <strong>largement dépassé</strong>&nbsp;!</p>
+      <p>Contrairement à ce qu'a laissé entendre la commune, ce ne sont pas quelques voisins excédés par le bruit du chantier, mais bien <strong>des centaines de personnes</strong> qui demandent à être consultées.</p>
+      <p>Un immense MERCI à vous toutes et tous.</p>
+      <p>⚖️ Un investissement de 10 millions&nbsp;? Grâce à vous, la décision finale revient maintenant au peuple.</p>
+      <a class="article-img photo-actu" href="remise-signatures-2026-11-18.jpg" target="_blank" rel="noopener">
+        <img src="remise-signatures-2026-11-18.jpg" width="1200" height="1599" loading="lazy" alt="Deux membres du comité, souriants, brandissent le dossier bleu contenant les signatures devant le bâtiment communal de Penthaz.">
+        <small>Remise des signatures, le 18 novembre 2026.</small>
+      </a>
+      <p>👉 Pour la 2e phase, nous cherchons des <strong>ambassadeurs</strong>. Leur rôle&nbsp;:</p>
+      <ul>
+        <li>participer à une séance d'information et poser leurs questions&nbsp;;</li>
+        <li>recevoir une documentation complémentaire&nbsp;;</li>
+        <li>étudier ensemble les autres options possibles&nbsp;;</li>
+        <li>inciter leur entourage à voter NON.</li>
+      </ul>
+      <p>Vous êtes partant·e&nbsp;? Écrivez-nous à <a href="mailto:referendumpenthaz@gmail.com">referendumpenthaz@gmail.com</a>, sur nos réseaux sociaux ou via le <a href="#contact">formulaire ci-dessous</a>.</p>
+    </article>
 
     <article class="actu">
       <div class="quand">6 novembre 2026 · Message du comité</div>
