@@ -6,7 +6,7 @@
 <title>Référendum Bornalet – Penthaz</title>
 <meta name="description" content="Comité référendaire du Bornalet : un référendum pour permettre à la population de Penthaz de voter sur le crédit de CHF 8'846'000.– pour l'immeuble du Bornalet.">
 <meta property="og:title" content="Bornalet – Référendum communal">
-<meta property="og:description" content="Un investissement de 10 mio ? C'est aux habitants de choisir ! Ni pour, ni contre : signer, c'est demander une votation populaire.">
+<meta property="og:description" content="Un investissement de 10 mio ? C'est aux habitants de choisir ! Référendum sur le Bornalet à Penthaz.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://referendum.ddns.net/">
 <meta property="og:image" content="https://referendum.ddns.net/banniere-mobile.jpg">
@@ -42,16 +42,6 @@ h1{font-family:Fraunces,Georgia,serif;font-weight:800;font-size:clamp(2.1rem,6vw
 .cta{display:inline-block;margin-top:28px;margin-left:12px;background:var(--or);color:var(--bleu-fonce);text-decoration:none;font-weight:700;padding:.7em 1.3em;border-radius:10px}
 .cta:hover{filter:brightness(1.05)}
 
-/* Feuille lignée */
-.feuille{background:
-   linear-gradient(90deg,transparent 46px,var(--marge) 46px,var(--marge) 48px,transparent 48px),
-   repeating-linear-gradient(#fff 0 31px,var(--ligne) 31px 32px);
-  border-radius:6px;box-shadow:0 10px 30px rgba(18,58,115,.12);padding:30px 26px 30px 70px;margin:-36px 0 0;position:relative}
-.feuille h2{margin-top:0}
-.signer{margin-top:22px;display:flex;align-items:flex-end;gap:14px;flex-wrap:wrap}
-.signer .ligne-sig{flex:1;min-width:180px;border-bottom:2px solid var(--bleu);height:44px;position:relative}
-.signer .ligne-sig span{position:absolute;bottom:4px;left:8px;font-family:Caveat,cursive;font-size:1.7rem;color:var(--bleu)}
-.signer small{color:var(--doux)}
 
 section{padding:48px 0 8px}
 h2{font-family:Fraunces,Georgia,serif;font-weight:600;color:var(--bleu-fonce);font-size:clamp(1.5rem,3.4vw,2rem);line-height:1.2;margin:0 0 .6em}
@@ -75,13 +65,6 @@ h2 .ico{margin-right:.35em}
 .carte .gros{font-family:Fraunces,Georgia,serif;font-weight:800;font-size:2rem;color:var(--bleu-fonce);line-height:1.1}
 .carte p{margin:.4em 0 0;color:var(--doux);font-size:.97rem}
 
-/* Signer */
-#signer .bloc{background:linear-gradient(160deg,var(--bleu-fonce),var(--bleu));color:#fff;border-radius:14px;padding:30px 26px;margin-top:8px}
-#signer h2{color:#fff}
-#signer .btn{display:inline-block;background:var(--or);color:var(--bleu-fonce);text-decoration:none;font-weight:700;padding:.8em 1.4em;border-radius:10px;margin-top:8px}
-#signer .a-completer{display:inline-block;background:rgba(255,255,255,.12);border:1px dashed rgba(255,255,255,.6);padding:.5em .9em;border-radius:8px;margin-top:10px;font-size:.95rem}
-#signer ul{padding-left:1.2em}
-#signer .delai{display:inline-block;background:var(--or);color:var(--bleu-fonce);font-weight:700;padding:.35em .8em;border-radius:8px;margin:4px 0 10px}
 .etapes{counter-reset:e;list-style:none;padding:0;margin:20px 0}
 .etapes li{counter-increment:e;position:relative;padding:0 0 18px 52px}
 .etapes li::before{content:counter(e);position:absolute;left:0;top:0;width:36px;height:36px;border-radius:50%;background:var(--or);color:var(--bleu-fonce);font-weight:800;display:flex;align-items:center;justify-content:center;font-family:Fraunces,Georgia,serif}
@@ -112,17 +95,8 @@ textarea{min-height:120px;resize:vertical}
 .merci.visible{display:block}
 @media (max-width:560px){.champs{grid-template-columns:1fr}}
 
-/* Lecteur PDF */
-.lecteur{position:fixed;inset:0;z-index:100;background:rgba(11,38,80,.88);display:none;flex-direction:column}
-.lecteur.ouvert{display:flex}
-.lecteur-barre{display:flex;align-items:center;gap:10px;flex-wrap:wrap;padding:10px 16px;background:var(--bleu-fonce);color:#fff;border-bottom:4px solid var(--or)}
-.lecteur-barre strong{flex:1;min-width:140px;font-size:1rem}
-.lecteur-barre a,.lecteur-barre button{font:inherit;font-size:.95rem;font-weight:700;border-radius:8px;padding:.5em 1em;cursor:pointer;text-decoration:none}
 .l-telecharger{background:var(--or);color:var(--bleu-fonce);border:0}
 .l-fermer{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.6)}
-.lecteur-page{flex:1;overflow:auto;padding:16px;display:flex;justify-content:center;align-items:flex-start}
-.lecteur-page canvas{background:#fff;max-width:100%;height:auto;box-shadow:0 8px 30px rgba(0,0,0,.4)}
-.lecteur-msg{color:#fff;margin-top:40px}
 
 /* Réseaux sociaux */
 .reseaux{display:flex;flex-wrap:wrap;gap:12px;margin-top:6px}
@@ -148,9 +122,6 @@ footer strong{color:var(--bleu-fonce)}
 
 @media (max-width:560px){
   body{font-size:17px}
-  .feuille{padding:24px 18px 24px 52px;background:
-   linear-gradient(90deg,transparent 32px,var(--marge) 32px,var(--marge) 34px,transparent 34px),
-   repeating-linear-gradient(#fff 0 31px,var(--ligne) 31px 32px)}
 }
 </style>
 </head>
@@ -165,22 +136,12 @@ footer strong{color:var(--bleu-fonce)}
   <div class="bandeau">
     <div class="wrap">
       <div class="badge">⚖️ <span><b>NI POUR</b> • <b>NI CONTRE</b></span></div>
-      <a class="cta" href="#signer">✍️ Comment signer</a>
+      <a class="cta" href="#actualites">📰 Actualités</a>
     </div>
   </div>
 </header>
 
 <main class="wrap">
-
-  <div class="feuille">
-    <h2>Signer, ce n'est pas voter pour ou contre le projet&nbsp;!</h2>
-    <p>Notre comité ne prend position <strong>ni POUR ni CONTRE</strong> la construction du bâtiment.</p>
-    <p>Signer la demande de référendum, c'est demander l'organisation d'une <strong>votation populaire</strong>, lors de laquelle chacun pourra librement voter <strong>OUI</strong> ou <strong>NON</strong>.</p>
-    <div class="signer">
-      <div class="ligne-sig"><span>Votre signature</span></div>
-      <small>… pour que Penthaz puisse voter.</small>
-    </div>
-  </div>
 
   <section id="actualites">
     <h2><span class="ico">📰</span>Actualités</h2>
@@ -255,63 +216,11 @@ footer strong{color:var(--bleu-fonce)}
         <p>Le rendement calculé ne tient compte ni des éventuels dépassements de budget, ni de l'évolution des taux d'intérêt.</p>
       </div>
     </div>
-    <div class="encadre">💬 Il existe d'autres solutions. En signant le référendum, vous permettez l'organisation d'un <strong>vrai débat</strong>.</div>
-  </section>
-
-  <section id="signer">
-    <div class="bloc">
-      <h2>✍️ Comment signer&nbsp;?</h2>
-      <div class="delai">📅 Récolte des signatures : du 20 octobre au 20 novembre 2026</div>
-
-      <ol class="etapes">
-        <li>
-          <h3>Téléchargez et imprimez la feuille officielle</h3>
-          <p>Seule la liste officielle, scellée par la Municipalité, est valable. Imprimez-la en A4, sans la modifier.</p>
-          <a class="btn" id="voir-pdf" href="liste-signatures.pdf" target="_blank" rel="noopener">📄 Voir la feuille officielle</a>
-        </li>
-        <li>
-          <h3>Remplissez et signez à la main</h3>
-          <p>Chaque personne écrit lisiblement, à la main, son nom, son prénom, sa date de naissance et son adresse, puis signe elle-même. Laissez la colonne « Contrôle » vide. Toutes les personnes du ménage qui ont le droit de vote à Penthaz peuvent signer sur la même feuille.</p>
-          <p class="conditions">Peuvent signer : les personnes inscrites au registre électoral de Penthaz, c'est-à-dire les Suisses dès 18 ans domiciliés à Penthaz, et les personnes étrangères dès 18 ans domiciliées à Penthaz, qui habitent en Suisse depuis plus de 10 ans et dans le canton de Vaud depuis plus de 3 ans. On ne signe qu'une seule fois.</p>
-        </li>
-        <li>
-          <h3>Rendez-nous la feuille, même incomplète</h3>
-          <p>Choisissez la solution qui vous convient : par la poste, chez l'un de nos commerces partenaires ou par un retrait à domicile.</p>
-          <div class="retours">
-            <div class="retour">
-              <b>✉️ Par la poste ou dans la boîte aux lettres</b>
-              <p>Envoyez la feuille dans une enveloppe affranchie, ou déposez-la directement dans la boîte aux lettres de l'un de ces membres du comité :</p>
-              <p><strong>Comité référendaire du Bornalet<br>c/o Patrick Narducci<br>Ch. du Montillier 22<br>1303 Penthaz</strong></p>
-              <p><strong>Comité référendaire du Bornalet<br>c/o Christian Muster<br>Rue du Four 2<br>1303 Penthaz</strong></p>
-            </div>
-            <div class="retour">
-              <b>🏪 Chez nos commerces partenaires</b>
-              <p>Déposez votre feuille signée chez l'un de nos partenaires :</p>
-              <ul class="partenaires">
-                <li>Denner</li>
-                <li>Monia Coiffure</li>
-                <li>Glamour Institut</li>
-                <li>La Ferme du Bornalet</li>
-                <li>My Garage Méca Loc</li>
-                <li>Cabinet d'ostéopathie Odile Peyron</li>
-                <li>Cellia Coiffure, Daillens</li>
-              </ul>
-            </div>
-            <div class="retour">
-              <b>🚪 Retrait à domicile</b>
-              <p>Un membre du comité passe chercher votre feuille. Remplissez simplement le <a style="color:var(--or)" href="#contact">formulaire ci-dessous</a>.</p>
-            </div>
-          </div>
-          <p><strong>Au plus tard le 20 novembre 2026</strong>, mais le plus tôt possible : nous devons encore remettre toutes les feuilles à la Municipalité.</p>
-        </li>
-      </ol>
-
-      <p>Une question ? Écrivez-nous à <a style="color:var(--or)" href="mailto:referendumpenthaz@gmail.com">referendumpenthaz@gmail.com</a> ou utilisez le formulaire ci-dessous.</p>
-    </div>
+    <div class="encadre">💬 Il existe d'autres solutions. Grâce au référendum, la population pourra en débattre lors d'un <strong>vrai débat</strong>.</div>
   </section>
 
   <section id="contact">
-    <h2><span class="ico">📬</span>Retrait à domicile, feuille ou question</h2>
+    <h2><span class="ico">📬</span>Une question ? Devenir ambassadeur ?</h2>
     <div class="boite">
       <div class="merci" id="merci" role="status">✅ Merci ! Votre message a bien été envoyé. Un membre du comité vous contactera.</div>
       <div class="merci" id="erreur" role="alert" style="background:#fdecea;border-color:#b3261e">⚠️ L'envoi n'a pas fonctionné. Réessayez dans un instant, ou écrivez-nous à <a href="mailto:referendumpenthaz@gmail.com">referendumpenthaz@gmail.com</a>.</div>
@@ -325,7 +234,7 @@ footer strong{color:var(--bleu-fonce)}
         <div class="champs">
           <div><label for="prenom">Prénom *</label><input id="prenom" name="Prénom" required autocomplete="given-name"></div>
           <div><label for="nom">Nom *</label><input id="nom" name="Nom" required autocomplete="family-name"></div>
-          <div class="plein"><label for="adresse">Adresse (rue et n°) *</label><input id="adresse" name="Adresse" required autocomplete="street-address"></div>
+          <div class="plein"><label for="adresse">Adresse (rue et n°) <span style="font-weight:400;color:var(--doux)">(facultatif)</span></label><input id="adresse" name="Adresse" autocomplete="street-address"></div>
           <div><label for="npa">NPA et localité *</label><input id="npa" name="NPA et localité" required value="1303 Penthaz"></div>
           <div><label for="tel">Téléphone <span style="font-weight:400;color:var(--doux)">(facultatif)</span></label><input id="tel" name="Téléphone" type="tel" autocomplete="tel" placeholder="079 123 45 67"></div>
           <div class="plein"><label for="email">E-mail <span style="font-weight:400;color:var(--doux)">(facultatif)</span></label><input id="email" name="email" type="email" autocomplete="email" placeholder="prenom.nom@exemple.ch"></div>
@@ -333,22 +242,21 @@ footer strong{color:var(--bleu-fonce)}
             <label for="demande">Je souhaite *</label>
             <select id="demande" name="Demande" required>
               <option value="">— Choisir —</option>
-              <option>Qu'un membre du comité passe récupérer ma feuille signée</option>
-              <option>Recevoir une feuille de signatures à domicile</option>
+              <option>Devenir ambassadeur du Bornalet</option>
               <option>Poser une question</option>
             </select>
           </div>
-          <div class="plein"><label for="message">Message</label><textarea id="message" name="Message" placeholder="Par exemple : vos disponibilités pour le passage, le nombre de signataires dans le ménage, votre question…"></textarea></div>
+          <div class="plein"><label for="message">Message</label><textarea id="message" name="Message" placeholder="Votre question ou vos disponibilités…"></textarea></div>
         </div>
         <button class="envoyer" type="submit">Envoyer</button>
-        <p class="note">Vos données sont transmises uniquement au comité référendaire, par e-mail, et ne servent qu'à organiser la récolte des signatures. Attention : ce formulaire ne remplace pas la signature sur la feuille officielle.</p>
+        <p class="note">Vos données sont transmises uniquement au comité référendaire, par e-mail, et ne servent qu'à vous répondre.</p>
       </form>
     </div>
   </section>
 
   <section id="suivre">
     <h2><span class="ico">📣</span>Suivez-nous</h2>
-    <p>Les dernières nouvelles de la récolte des signatures, en direct :</p>
+    <p>Les dernières nouvelles du référendum, en direct :</p>
     <div class="reseaux">
       <a class="reseau r-fb" href="https://www.facebook.com/profile.php?id=61595691584409" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M24 12.07C24 5.4 18.63 0 12 0S0 5.4 0 12.07C0 18.1 4.39 23.1 10.13 24v-8.44H7.08v-3.49h3.05V9.41c0-3.02 1.79-4.69 4.53-4.69 1.31 0 2.68.24 2.68.24v2.97h-1.51c-1.49 0-1.95.93-1.95 1.88v2.26h3.33l-.53 3.49h-2.8V24C19.61 23.1 24 18.1 24 12.07z"/></svg>Facebook</a>
       <a class="reseau r-ig" href="https://www.instagram.com/referendum.bornalet/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.7 3.7 0 0 1-1.38-.9 3.7 3.7 0 0 1-.9-1.38c-.16-.42-.36-1.06-.41-2.23C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16zM12 0C8.74 0 8.33.01 7.05.07 5.78.13 4.9.33 4.14.63c-.79.31-1.46.72-2.13 1.38A5.9 5.9 0 0 0 .63 4.14C.33 4.9.13 5.78.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.27.26 2.15.56 2.91.31.79.72 1.46 1.38 2.13a5.9 5.9 0 0 0 2.13 1.38c.76.3 1.64.5 2.91.56C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c1.27-.06 2.15-.26 2.91-.56a5.9 5.9 0 0 0 2.13-1.38 5.9 5.9 0 0 0 1.38-2.13c.3-.76.5-1.64.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.27-.26-2.15-.56-2.91a5.9 5.9 0 0 0-1.38-2.13A5.9 5.9 0 0 0 19.86.63C19.1.33 18.22.13 16.95.07 15.67.01 15.26 0 12 0zm0 5.84a6.16 6.16 0 1 0 0 12.32 6.16 6.16 0 0 0 0-12.32zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.4-11.85a1.44 1.44 0 1 0 0 2.88 1.44 1.44 0 0 0 0-2.88z"/></svg>Instagram</a>
@@ -364,16 +272,6 @@ footer strong{color:var(--bleu-fonce)}
   </div>
 </footer>
 
-<div class="lecteur" id="lecteur" role="dialog" aria-modal="true" aria-label="Feuille officielle de signatures">
-  <div class="lecteur-barre">
-    <strong>Feuille officielle de signatures</strong>
-    <a class="l-telecharger" href="liste-signatures.pdf" download="Referendum-Bornalet-liste-signatures.pdf">⬇️ Télécharger</a>
-    <button class="l-fermer" type="button" id="lecteur-fermer">✕ Fermer</button>
-  </div>
-  <div class="lecteur-page" id="lecteur-page"><p class="lecteur-msg">Chargement…</p></div>
-</div>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
 <script>
 if (/[?&]merci=1/.test(location.search)) {
   document.getElementById('merci').classList.add('visible');
@@ -409,55 +307,6 @@ if (/[?&]merci=1/.test(location.search)) {
   });
 })();
 
-(function () {
-  var lien = document.getElementById('voir-pdf');
-  var lecteur = document.getElementById('lecteur');
-  var zone = document.getElementById('lecteur-page');
-  var fermer = document.getElementById('lecteur-fermer');
-  var dejaRendu = false;
-  if (!window.pdfjsLib) return; // sans le lecteur, le lien ouvre le PDF dans le navigateur
-  pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
-
-  function rendre() {
-    pdfjsLib.getDocument('liste-signatures.pdf').promise.then(function (pdf) {
-      zone.innerHTML = '';
-      var suite = Promise.resolve();
-      for (var n = 1; n <= pdf.numPages; n++) {
-        (function (num) {
-          suite = suite.then(function () {
-            return pdf.getPage(num).then(function (page) {
-              var largeur = Math.min(zone.clientWidth - 32, 900);
-              var base = page.getViewport({ scale: 1 });
-              var ratio = window.devicePixelRatio || 1;
-              var vp = page.getViewport({ scale: (largeur / base.width) * ratio });
-              var c = document.createElement('canvas');
-              c.width = vp.width; c.height = vp.height;
-              c.style.width = (vp.width / ratio) + 'px';
-              zone.appendChild(c);
-              return page.render({ canvasContext: c.getContext('2d'), viewport: vp }).promise;
-            });
-          });
-        })(n);
-      }
-      dejaRendu = true;
-    }).catch(function () {
-      zone.innerHTML = '<p class="lecteur-msg">Impossible d\'afficher la feuille ici. Utilisez le bouton « Télécharger ».</p>';
-    });
-  }
-
-  lien.addEventListener('click', function (e) {
-    e.preventDefault();
-    lecteur.classList.add('ouvert');
-    document.body.style.overflow = 'hidden';
-    if (!dejaRendu) rendre();
-  });
-  function fermerLecteur() {
-    lecteur.classList.remove('ouvert');
-    document.body.style.overflow = '';
-  }
-  fermer.addEventListener('click', fermerLecteur);
-  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') fermerLecteur(); });
-})();
 </script>
 </body>
 </html>
